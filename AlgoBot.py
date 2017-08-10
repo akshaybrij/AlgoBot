@@ -14,11 +14,13 @@ while msg!="exit":
  if msg in greet.keys():
      print greet[msg]
  token=word_tokenize(msg)
- tok=[i for i in token if i not in words]
+ tok=[i.lower() for i in token if i not in words]
  comp=re.compile('\d+')
  num_list=comp.findall(msg)
+ num_list=map(int,num_list)
  for i in tok:
      if i in actiondict.keys():
          oper=eval(actiondict[i])
          res=oper.operation(list(num_list))
+         num_list=res
          print res
