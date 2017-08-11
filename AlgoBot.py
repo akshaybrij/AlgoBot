@@ -5,6 +5,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from Sort import Sort
 from Rotate import Rotate
+from CreateFunction import CreateFunction
 msg="Hi"
 while msg!="exit":
  msg=raw_input("");
@@ -18,6 +19,11 @@ while msg!="exit":
  comp=re.compile('\d+')
  num_list=comp.findall(msg)
  num_list=map(int,num_list)
+ if "new function" in msg:
+     num_list,k,a=msg.partition("new function")
+     newfunc=CreateFunction()
+     op=newfunc.create(a)
+     print op
  for i in tok:
      if i in actiondict.keys():
          oper=eval(actiondict[i])
