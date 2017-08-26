@@ -6,10 +6,11 @@ from nltk.corpus import stopwords
 from Sort import Sort
 from Rotate import Rotate
 from CreateFunction import CreateFunction
+from JobSeq import JobSeq
 msg="Hi"
 while msg!="exit":
  msg=raw_input("");
- actiondict={"sort":"Sort()","rotate":"Rotate()"}
+ actiondict={"sort":"Sort()","rotate":"Rotate()", "jobsequence":"JobSeq()"}
  greet={'Hola':'Hola!!','Hey':'Hey What can I do for you','Who are you':'I am AlgoBot. I solve algorithms'}
  words=stopwords.words("english")
  if msg in greet.keys():
